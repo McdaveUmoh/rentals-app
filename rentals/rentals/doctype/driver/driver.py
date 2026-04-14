@@ -6,4 +6,9 @@ from frappe.model.document import Document
 
 
 class Driver(Document):
-	pass
+	def before_save(self):
+		self.full_name = f"{self.first_name} {self.last_name}"
+
+
+# API KEY: df598cd081e700a
+# API SECRET: d82f16800c2ef1f

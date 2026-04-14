@@ -60,14 +60,15 @@
    "fieldname": "full_name",
    "fieldtype": "Data",
    "label": "Full Name",
-   "options": "f\"{doc.first_name} {doc.last_name}\""
+   "options": "f\"{doc.first_name} {doc.last_name}\"",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "image_field": "profile_image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-04-14 17:47:18.668033",
+ "modified": "2026-04-14 17:53:12.225789",
  "modified_by": "Administrator",
  "module": "Rentals",
  "name": "Driver",
