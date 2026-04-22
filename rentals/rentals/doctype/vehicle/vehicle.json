@@ -12,7 +12,8 @@
   "color",
   "column_break_yqdq",
   "model",
-  "vehicle_year"
+  "vehicle_year",
+  "car_name"
  ],
  "fields": [
   {
@@ -52,12 +53,18 @@
    "label": "Vehicle Year",
    "non_negative": 1,
    "reqd": 1
+  },
+  {
+   "fieldname": "car_name",
+   "fieldtype": "Data",
+   "label": "Car Name",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-04-10 19:57:19.095575",
+ "modified": "2026-04-22 19:57:49.642685",
  "modified_by": "Administrator",
  "module": "Rentals",
  "name": "Vehicle",
