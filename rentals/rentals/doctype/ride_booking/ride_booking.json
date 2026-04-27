@@ -8,10 +8,15 @@
   "section_break_bqfp",
   "order",
   "amended_from",
+  "vehicle",
   "column_break_xfiw",
   "driver",
   "section_break_bjtv",
-  "items"
+  "items",
+  "section_break_phfs",
+  "rate",
+  "column_break_jgzn",
+  "total_amount"
  ],
  "fields": [
   {
@@ -56,13 +61,39 @@
    "fieldtype": "Table",
    "label": "Items",
    "options": "Ride Booking Item"
+  },
+  {
+   "fieldname": "section_break_phfs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "label": "Rate"
+  },
+  {
+   "fieldname": "column_break_jgzn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "order.vehicle",
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "label": "Vehicle",
+   "options": "Vehicle"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-04-23 15:10:34.831252",
+ "modified": "2026-04-27 16:52:08.614720",
  "modified_by": "Administrator",
  "module": "Rentals",
  "name": "Ride Booking",
