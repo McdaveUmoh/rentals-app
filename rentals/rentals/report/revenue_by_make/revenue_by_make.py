@@ -1,7 +1,7 @@
 # Copyright (c) 2026, mcdave umoh and contributors
 # For license information, please see license.txt
 
-# import frappe
+import frappe
 from frappe import _
 
 
@@ -12,10 +12,30 @@ def execute(filters: dict | None = None):
 	dictionary and should return columns and data. It is called by the framework
 	every time the report is refreshed or a filter is updated.
 	"""
-	columns = get_columns()
-	data = get_data()
+	columns = [
+		{
+			"label": "Make",
+			"fieldname": "make",
+			"fieldtype": "Data",
+		},
+		{
+			"label": "Total Revenue",
+			"fieldname": "total_revenue",
+			"fieldtype": "Currency",
+			"options": "NGN"
+		}
+		]
+	data = frappe.get_all("Ride Booking",  fields=[{"SUM": "total_amount",  "as": " total_revenue"}, "vehicle.make"], filters={"docstatus": 1}, group_by="vehicle.make")
 
-	return columns, data
+	chart = {
+		"data": {
+			"labels": [x.make for x in data],
+			"datasets": [{"values": [x.total_revenue for x in data]}]
+		},
+		"type": "donut"
+	}
+
+	return columns, data, "Here is the Vehicle Report!", chart
 
 
 def get_columns() -> list[dict]:
